@@ -1,23 +1,31 @@
-var Raindrop = function (x1, y1, x2, y2) {
-  this.x1 = x1;
-  this.y1 = y1;
-  this.x2 = x2;
-  this.y2 = y2;
+var Raindrop = function (x, y) {
+  this.x = x;
+  this.y = y;
 };
 
 Raindrop.prototype = {
 
-  length: 25,
+  length: 5,
+  lengthModify: 3,
+  speed: 1,
 
   update: function() {
-    this.x1 += random(0, 600);
-    this.y1 += random(400, 600);
-    this.x2 += this.x1 - length;
-    this.y2 += this.y2 + length;
+    this.x -= this.speed * random(2, 5);
+    this.y += this.speed * random(2, 5);
+    if (this.y > height) this.y = this.length * -1;
+    if (this.x < 0) this.x = this.width;
   },
 
   display: function () {
-    line(this.x1, this.y1, this.x2, this.y2);
-  }
+    noStroke();
+    fill("blue");
+    beginShape();
+    vertex(this.x, this.y);
+    vertex(this.x, this.y + this.lengthModify);
+    vertex(this.x - this.length, this.y + this.length);
+    vertex(this.x - this.length, this.y + this.length + this.lengthModify);
+    endShape();
+  },
+
 
 };

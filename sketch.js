@@ -12,7 +12,7 @@ setup = function () {
 
 draw = function () {
   background(0);
-    var index = 0;
-    while (mou)
+    rain.forEach(updatendisplay);
+    if (mouseIsPressed) rain.push(new Raindrop(random(0, 620), random(0, 620)));
   // your code goes here
 };
