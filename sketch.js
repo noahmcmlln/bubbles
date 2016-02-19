@@ -13,6 +13,6 @@ setup = function () {
 draw = function () {
   background(0);
     rain.forEach(updatendisplay);
-    if (mouseIsPressed) rain.push(new Raindrop(random(0, 620), random(0, 620)));
-  // your code goes here
+    if (mouseIsPressed) rain.push(new Raindrop(mouseX, mouseY));
+  // your code goes here0
 };

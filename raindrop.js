@@ -7,12 +7,12 @@ Raindrop.prototype = {
 
   linelength: 5,
   linelengthModify: 3,
-  speed: 1,
+
 
   update: function() {
-    this.x -= this.speed * random(2, 5);
-    this.y += this.speed * random(2, 5);
-    if (this.y > height) this.y = this.length * -1;
+    this.x += random(-5, -2);
+    this.y += random(2, 5);
+    if (this.y > this.height) this.y = this.linelength * -1;
     if (this.x < 0) this.x = this.width;
   },
 
@@ -25,6 +25,7 @@ Raindrop.prototype = {
     vertex(this.x - this.linelength, this.y + this.linelength);
     vertex(this.x - this.linelength, this.y + this.linelength + this.linelengthModify);
     endShape();
+    console.log("Drawing rain at " + this.x + ", " + this.y);
   },
 
 
