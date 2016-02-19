@@ -5,8 +5,8 @@ var Raindrop = function (x, y) {
 
 Raindrop.prototype = {
 
-  length: 5,
-  lengthModify: 3,
+  linelength: 5,
+  linelengthModify: 3,
   speed: 1,
 
   update: function() {
@@ -21,9 +21,9 @@ Raindrop.prototype = {
     fill("blue");
     beginShape();
     vertex(this.x, this.y);
-    vertex(this.x, this.y + this.lengthModify);
-    vertex(this.x - this.length, this.y + this.length);
-    vertex(this.x - this.length, this.y + this.length + this.lengthModify);
+    vertex(this.x, this.y + this.linelengthModify);
+    vertex(this.x - this.linelength, this.y + this.linelength);
+    vertex(this.x - this.linelength, this.y + this.linelength + this.linelengthModify);
     endShape();
   },
 
