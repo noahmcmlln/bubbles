@@ -10,6 +10,8 @@ Bubble.prototype = {
   update: function() {
     this.x += random(-1, 1);
     this.y += random(0, -5);
+    if (this.y < this.radius * -2) this.y = this.radius * 2 + height;
+    // once the bubbles disappear completely from the screen they appear 10 pixels below the bottom of the screen and rise up again. 
   },
 
   display: function () {
