@@ -7,13 +7,12 @@ var updatendisplay = function(Bubble) {
 
 setup = function () {
   createCanvas(600, 600);
-  // your code goes here
 };
 
 draw = function () {
   background(0);
   bubbles.forEach(updatendisplay);
-  while (bubbles.length < 500) bubbles.push(new Bubble(random(0, width), random(0, height)));
+  while (bubbles.length < 500) bubbles.push(new Bubble(random(5, width - 5), random(5, height - 5)));
+  // this code makes it so that all bubbles are fully visible
   if (mouseIsPressed) bubbles.push(new Bubble(mouseX, mouseY));
-  // your code goes here
 };
