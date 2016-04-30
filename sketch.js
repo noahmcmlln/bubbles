@@ -13,6 +13,7 @@ setup = function () {
 draw = function () {
   background(0);
   bubbles.forEach(updatendisplay);
+  while (bubbles.length < 500) bubbles.push(new Bubble(random(0, width), random(0, height)));
   if (mouseIsPressed) bubbles.push(new Bubble(mouseX, mouseY));
   // your code goes here
 };
